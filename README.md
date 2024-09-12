@@ -16,7 +16,7 @@ Deverá retornar o sumário de vendas por vendedor no período informado:
 Deverá retornar o sumário de vendas por vendedor dos últimos 12 meses.
 
 ## Relatório de vendas 
-1.[IN] O usuário informa, opcionalmente, data inicial, data final e um trecho do nome do vendedor. 
+1.[IN] O usuário informa, opcionalmente, data inicial, data final e um trecho do nome do vendedor. <br>
 2.[OUT] O sistema informa uma listagem paginada contendo id, data, quantia vendida e nome do 
  vendedor, das vendas que se enquadrem nos dados informados.
 
