@@ -42,7 +42,8 @@ public class SaleService {
                 ZoneId.systemDefault()) : LocalDate.parse(maxDateStr);
         LocalDate minDate = minDateStr.equals("") ? maxDate.minusYears(2L) : LocalDate.parse(minDateStr);
 
-        return saleRepository.getSaleSummaries(minDate, maxDate);
+        List<SaleSummaryProjections> result = saleRepository.getSaleSummaries2(minDate,maxDate);
+        return result.stream().map(x -> new SaleSummaryDTO(x)).collect(Collectors.toList());
     }
 
 }

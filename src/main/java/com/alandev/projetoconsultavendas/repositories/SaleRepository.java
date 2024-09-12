@@ -44,9 +44,9 @@ public interface SaleRepository extends JpaRepository<Sale, Long> {
                     INNER JOIN tb_seller
                     ON tb_seller.id = tb_sales.seller_id
                     WHERE tb_sales.date BETWEEN :minDate AND :maxDate
-                    AND tb_seller.name LIKE CONCAT('%', :name, '%')
+                    AND UPPER(tb_seller.name) LIKE UPPER(CONCAT('%', :name, '%'))
                     GROUP BY tb_sales.id , tb_seller.name
-                    ORDER BY SUM(tb_sales.amount) DESC
+                    ORDER BY SUM(tb_sales.amount) 
             """)
     Page<SaleReportProjection> getReport(
             @Param("name") String name,
